@@ -280,6 +280,28 @@ type DeviceCreateRequest struct {
 	BlockUplink   bool     `json:"block_uplink"`
 }
 
+type DeviceUpdateRequest struct {
+	Tags          []string `json:"tags"`
+	Activation    string   `json:"activation"`
+	Adr           DevAdr   `json:"adr"`
+	AppEui        string   `json:"app_eui"`
+	AppKey        string   `json:"app_key,omitempty"`
+	Appskey       string   `json:"appskey,omitempty"`
+	Band          string   `json:"band"`
+	CountersSize  int      `json:"counters_size"`
+	DevAddr       string   `json:"dev_addr,omitempty"`
+	DevClass      string   `json:"dev_class"`
+	Encryption    string   `json:"encryption"`
+	Nwkskey       string   `json:"nwkskey,omitempty"`
+	Rx1           DevRx1   `json:"rx1"`
+	StrictCounter bool     `json:"strict_counter"`
+	DeviceType    string   `json:"device_type"`
+	ContractID    int      `json:"contract_id"`
+	DevEui        string   `json:"dev_eui"`
+	BlockDownlink bool     `json:"block_downlink"`
+	BlockUplink   bool     `json:"block_uplink"`
+}
+
 type DevAdr struct {
 	Mode string `json:"mode"`
 }
