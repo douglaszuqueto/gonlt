@@ -15,6 +15,7 @@ type DeviceService interface {
 	List(ctx context.Context) (*nlttypes.DeviceListResponse, error)
 	Find(ctx context.Context, deviceID string) (*nlttypes.Device, error)
 	Create(ctx context.Context, device nlttypes.DeviceCreateRequest) (*nlttypes.Device, error)
+	Update(ctx context.Context, device nlttypes.Device) (*nlttypes.Device, error)
 	Activate(ctx context.Context, deviceID string) error
 	Deactivate(ctx context.Context, deviceID string) error
 	Delete(ctx context.Context, deviceID string) error
