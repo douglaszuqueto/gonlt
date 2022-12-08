@@ -220,8 +220,8 @@ func (s DeviceServiceOp) Delete(ctx context.Context, deviceID string) error {
 		return err
 	}
 
-	if device.Detail != "The device was deleted" {
-		return fmt.Errorf("error deleting device: %s", device.Detail)
+	if device.Message != "The device was deleted" {
+		return fmt.Errorf("error deleting device: %s", device.Message)
 	}
 
 	return nil

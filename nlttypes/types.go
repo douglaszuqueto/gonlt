@@ -240,6 +240,7 @@ type Device struct {
 	CreatedAt     string      `json:"created_at"`
 	UpdatedAt     string      `json:"updated_at"`
 	Detail        string      `json:"detail"`
+	Message       string      `json:"message"`
 }
 
 type Adr struct {
