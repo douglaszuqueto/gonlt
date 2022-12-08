@@ -124,6 +124,38 @@ func (s DeviceServiceOp) Create(ctx context.Context, device nlttypes.DeviceCreat
 	return &createdDevice, nil
 }
 
+func (s DeviceServiceOp) Update(ctx context.Context, device nlttypes.Device) (*nlttypes.Device, error) {
+	endpoint := buildEndpoint("devices/" + device.DevEui)
+
+	resp, err := s.rest.Patch(ctx, endpoint, krest.RequestData{
+		Headers: map[string]string{
+			"Authorization": fmt.Sprintf("Bearer %s", s.creds.Token),
+		},
+		MaxRetries: 3,
+		Body:       device,
+	})
+	if err != nil {
+		if resp.StatusCode == 401 {
+			return nil, handleUnauthorizedError(resp.Body)
+		}
+
+		if resp.StatusCode == 400 {
+			return nil, handleDeviceCreateError(resp.Body)
+		}
+
+		return nil, err
+	}
+
+	var result nlttypes.Device
+
+	err = json.Unmarshal(resp.Body, &result)
+	if err != nil {
+		return nil, err
+	}
+
+	return &result, nil
+}
+
 func (s DeviceServiceOp) Activate(ctx context.Context, deviceID string) error {
 	endpoint := buildEndpoint(fmt.Sprintf("devices/%s/activation", deviceID))
 
