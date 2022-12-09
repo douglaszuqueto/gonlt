@@ -185,19 +185,19 @@ type Connectionmodel struct {
 }
 
 type Filtermodel struct {
-	Applications []interface{} `json:"applications"`
-	Description  string        `json:"description"`
-	Devices      []interface{} `json:"devices"`
-	Duplicate    bool          `json:"duplicate"`
-	Gateways     []interface{} `json:"gateways"`
-	Lora         bool          `json:"lora"`
-	Radio        bool          `json:"radio"`
-	Tags         []string      `json:"tags"`
-	Types        []string      `json:"types"`
-	WithTags     bool          `json:"with_tags"`
-	IsDisabled   bool          `json:"is_disabled"`
-	ID           int           `json:"id"`
-	CreatedAt    time.Time     `json:"created_at"`
+	Applications []string  `json:"applications"`
+	Description  string    `json:"description"`
+	Devices      []string  `json:"devices"`
+	Duplicate    bool      `json:"duplicate"`
+	Gateways     []string  `json:"gateways"`
+	Lora         bool      `json:"lora"`
+	Radio        bool      `json:"radio"`
+	Tags         []string  `json:"tags"`
+	Types        []string  `json:"types"`
+	WithTags     bool      `json:"with_tags"`
+	IsDisabled   bool      `json:"is_disabled"`
+	ID           int       `json:"id"`
+	CreatedAt    time.Time `json:"created_at"`
 }
 
 type Data struct {
@@ -308,4 +308,34 @@ type DevAdr struct {
 
 type DevRx1 struct {
 	Delay int `json:"delay"`
+}
+
+// Create Connection
+
+type CreateConnectionRequest struct {
+	Connectionmodel Connectionmodel `json:"connections"`
+	Filtermodel     Filtermodel     `json:"filters"`
+}
+
+type CreateConnectionResponse struct {
+	Connectionmodel Connectionmodel `json:"connections"`
+	Filtermodel     Filtermodel     `json:"filters"`
+}
+
+// Update Connection
+
+type UpdateConnectionRequest struct {
+	Connectionmodel Connectionmodel `json:"connections"`
+	Filtermodel     Filtermodel     `json:"filters"`
+}
+
+type UpdateConnectionResponse struct {
+	Connectionmodel Connectionmodel `json:"connections"`
+	Filtermodel     Filtermodel     `json:"filters"`
+}
+
+// Delete Connection
+
+type DeleteConnectionResponse struct {
+	Message string `json:"message"`
 }
