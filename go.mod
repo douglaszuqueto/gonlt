@@ -1,5 +1,5 @@
 module github.com/douglaszuqueto/gonlt
 
-go 1.18
+go 1.19
 
-require github.com/vingarcia/krest v0.0.2
+require github.com/vingarcia/krest v0.0.3
