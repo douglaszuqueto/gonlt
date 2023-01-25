@@ -3,4 +3,6 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/stretchr/testify v1.7.0 h1:nwc3DEeHmmLAfoZucVR881uASk0Mfjw8xYJ99tb5CcY=
 github.com/vingarcia/krest v0.0.3 h1:fGWvpQBpIKaPViI1CS8nfG5hwzVVr18QU4nnMbSth9c=
 github.com/vingarcia/krest v0.0.3/go.mod h1:kD72NnLaYElImkqHa7bUROECP5vL3XbnIhK+A5B8c3E=
+github.com/vingarcia/krest v0.0.4 h1:qtwmSIUTqGbrAqC7P+BhGN9jUFVlPtwjzuU91vFllw0=
+github.com/vingarcia/krest v0.0.4/go.mod h1:kD72NnLaYElImkqHa7bUROECP5vL3XbnIhK+A5B8c3E=
 gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c h1:dUUwHk2QECo/6vqA44rthZ8ie2QXMNeKRTHCNY2nXvo=
